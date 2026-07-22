@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Daily Log Entry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+
+<div class="page-shell">
+<header class="page-header">
+<div class="brand-block">
+<div class="logo-badge"><i class="fa-solid fa-school"></i></div>
+<div>
+<p class="brand-subtitle">School Daily Log Diary Management System</p>
+<h1>DAV INTERNATIONAL SCHOOL</h1>
+</div>
+</div>
+<div class="header-title"><h2>Teacher Daily Log Entry</h2></div>
+</header>
+
+<main class="content-area">
+
+<section class="card diary-info-card">
+<div class="diary-info-row">
+<div><span>Teacher</span><strong id="teacherName"></strong></div>
+<div><span>Day</span><strong id="teacherDay"></strong></div>
+<div><span>Date</span><strong id="teacherDate"></strong></div>
+</div>
+</section>
+
+<section class="card diary-table-card">
+<div class="section-heading">
+<h3><i class="fa-solid fa-book"></i> Daily Log Entry</h3>
+<p>Enter today's classwork and homework.</p>
+</div>
+<div class="responsive-table diary-table-wrapper">
+<table id="teacherDiaryTable">
+<thead>
+<tr>
+<th>Period</th>
+<th>Subject</th>
+<th>Classwork</th>
+<th>Homework</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</section>
+
+<section class="card preview-card">
+<div class="section-heading">
+<h3><i class="fa-solid fa-eye"></i> Daily Preview</h3>
+</div>
+<div id="dailyPreview"></div>
+</section>
+
+<div class="action-row diary-actions">
+<button id="openPreviewBtn" class="secondary-btn"><i class="fa-solid fa-print"></i> Preview</button>
+<button id="downloadClassLogBtn" class="success-btn"><i class="fa-solid fa-file-lines"></i> Download Class Log Copy</button>
+</div>
+</main>
+</div>
+
+<!-- Teacher Preview Modal -->
+<div id="printModal" class="modal hidden">
+<div class="modal-dialog print-dialog">
+<div class="modal-header">
+<h3>Teacher Daily Log</h3>
+<button id="closePrintModalBtn" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div id="printPreviewContent"></div>
+<div class="modal-actions">
+<button id="modalPrintBtn" class="secondary-btn">Print</button>
+<button id="modalPdfBtn" class="secondary-btn">PDF</button>
+<button id="modalJpgBtn" class="secondary-btn">JPG</button>
+<button id="modalCloseBtn" class="primary-btn">Close</button>
+</div>
+</div>
+</div>
+
+<!-- NEW Class Log Editor -->
+<div id="classLogModal" class="modal hidden">
+<div class="modal-dialog class-log-dialog">
+<div class="modal-header">
+<h2>DAV INTERNATIONAL SCHOOL</h2>
+<button id="closeClassLogBtn" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+</div>
+
+<div id="classLogExportContent" class="class-log-export-content">
+<div class="class-log-export-header">
+<h1>DAV INTERNATIONAL SCHOOL</h1>
+<h2>CLASS DAILY LOG REPORT</h2>
+</div>
+<div class="class-log-meta">
+<div><strong>Class:</strong> <span id="classLogClass"></span></div>
+<div><strong>Day:</strong> <span id="classLogDay"></span></div>
+<div><strong>Date:</strong> <span id="classLogDate"></span></div>
+<div><strong>Class Teacher:</strong> <span id="classTeacherName"></span></div>
+</div>
+
+<div class="responsive-table">
+<table id="classLogTable">
+<thead>
+<tr>
+<th>Period</th>
+<th>Subject</th>
+<th>Classwork</th>
+<th>Homework</th>
+<th>Teacher</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+
+<div class="modal-actions">
+<button id="saveClassLogBtn" class="primary-btn">Save Changes</button>
+<button id="printClassLogBtn" class="secondary-btn">Print</button>
+<button id="pdfClassLogBtn" class="secondary-btn">Download PDF</button>
+<button id="jpgClassLogBtn" class="secondary-btn">Download JPG</button>
+<button id="closeClassLogFooterBtn" class="secondary-btn">Close</button>
+</div>
+</div>
+</div>
+
+
+<div id="alertModal" class="modal hidden">
+<div class="modal-dialog">
+<div class="modal-header">
+<h3 id="alertTitle">Alert</h3>
+<button id="closeAlertBtn" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div id="alertBody" class="modal-body"></div>
+<div class="modal-actions"><button id="alertCloseBtn" class="primary-btn">Close</button></div>
+</div>
+</div>
+
+<div id="downloadDiaryContent" class="download-hidden"></div>
+<div id="messageBanner" class="message-banner hidden"></div>
+
+
+<div id="loadingOverlay" class="loading-overlay hidden" aria-hidden="true">
+    <div class="loading-pill" role="status" aria-live="polite">
+        <span class="loading-dot"></span>
+        <span>Loading data...</span>
+    </div>
+</div>
+
+<script src="api.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="teacher.js"></script>
+
+</body>
+</html>

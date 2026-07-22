@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Class Timetable Setup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div class="brand-block">
+          <div class="logo-badge"><i class="fa-solid fa-school"></i></div>
+          <div>
+            <p class="brand-subtitle">School Daily Log Diary Management System</p>
+            <h1>Dav International School</h1>
+          </div>
+        </div>
+        <div class="header-title">
+          <h2>Weekly Class Timetable Setup</h2>
+        </div>
+      </header>
+
+      <main class="content-area">
+        <section class="card controls-card">
+          <div class="section-heading">
+            <h3><i class="fa-solid fa-calendar-days"></i> Timetable Setup</h3>
+            <p>Select the class and activate date to begin editing.</p>
+          </div>
+          <div class="controls-grid">
+            <div class="field-group">
+              <label for="classSelect">Class</label>
+              <select id="classSelect"></select>
+            </div>
+            <div class="field-group">
+              <label for="classTeacherSelect">Class Teacher</label>
+              <select id="classTeacherSelect"></select>
+            </div>
+            <div class="field-group">
+              <label for="effectiveDate">Effective Date</label>
+              <input type="date" id="effectiveDate" />
+            </div>
+            <div class="field-group button-group">
+              <button id="loadTimetableBtn" class="primary-btn">
+                <i class="fa-solid fa-arrows-rotate"></i> Load Timetable
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="card timetable-card">
+          <div class="section-heading">
+            <h3><i class="fa-solid fa-table"></i> Weekly Timetable</h3>
+            <p>Click any teaching cell to add or edit an entry.</p>
+          </div>
+          <div class="table-wrapper">
+            <table id="timetableTable"></table>
+          </div>
+        </section>
+<div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="loader"></div>
+    <p>Please wait...</p>
+</div>
+        <section class="card preview-card">
+          <div class="section-heading">
+            <h3><i class="fa-solid fa-eye"></i> Timetable Preview</h3>
+            <p>Read-only preview that updates after every save.</p>
+          </div>
+          <div id="previewContainer" class="preview-container"></div>
+        </section>
+
+        <div class="action-row">
+          <button id="previewFullBtn" class="secondary-btn">
+            <i class="fa-solid fa-file-contract"></i> Preview Full Timetable
+          </button>
+          <button id="saveTimetableBtn" class="primary-btn">
+            <i class="fa-solid fa-floppy-disk"></i> Save Timetable
+          </button>
+          <button id="resetTimetableBtn" class="danger-btn">
+            <i class="fa-solid fa-rotate-left"></i> Reset Timetable
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <div id="entryModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>Add Timetable Entry</h3>
+          <button type="button" class="icon-btn" id="closeEntryModalBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-meta">
+            <p><strong>Class :</strong> <span id="modalClassValue">2A</span></p>
+            <p><strong>Day :</strong> <span id="modalDayValue">Monday</span></p>
+            <p><strong>Period :</strong> <span id="modalPeriodValue">1</span></p>
+          </div>
+          <form id="entryForm">
+            <div class="field-group">
+              <label for="subjectSelect">Subject</label>
+              <select id="subjectSelect"></select>
+            </div>
+            <div class="field-group">
+              <label for="teacherSelect">Teacher</label>
+              <select id="teacherSelect"></select>
+            </div>
+            <div class="modal-actions">
+              <button type="submit" class="primary-btn">Save</button>
+              <button type="button" class="secondary-btn" id="cancelEntryBtn">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="printModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-dialog print-dialog">
+        <div class="modal-header">
+          <h3>Printable Timetable Preview</h3>
+          <button type="button" class="icon-btn" id="closePrintModalBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div id="printPreviewContent" class="print-preview-content"></div>
+        <div class="modal-actions print-actions">
+          <button type="button" class="secondary-btn">Download PDF</button>
+          <button type="button" class="secondary-btn">Download JPG</button>
+          <button type="button" class="primary-btn" id="closePrintActionsBtn">Close</button>
+        </div>
+      </div>
+    </div>
+ <script src="api.js"></script>
+    <script src="script.js"></script>
+    
+  </body>
+</html>

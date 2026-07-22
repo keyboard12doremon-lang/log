@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login - School Diary</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div class="brand-block">
+          <div class="logo-badge"><i class="fa-solid fa-school"></i></div>
+          <div>
+            <p class="brand-subtitle">School Daily Log Diary Management System</p>
+            <h1>Dav International school</h1>
+          </div>
+        </div>
+        <div class="header-title"><h2>Login</h2></div>
+      </header>
+<div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="loader"></div>
+    <p>Please wait...</p>
+</div>
+      <main class="content-area">
+        <section class="card">
+          <div class="section-heading"><h3>Administrator Login</h3></div>
+          <div class="controls-grid">
+            <div class="field-group">
+              <label for="adminPassword">Password</label>
+              <input id="adminPassword" type="password" />
+            </div>
+            <div class="field-group">
+              <button id="adminLoginBtn" class="primary-btn">Sign in as Administrator</button>
+            </div>
+            <div id="adminError" class="message-banner hidden"></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-heading"><h3>Teacher Login</h3></div>
+          <div class="controls-grid">
+            <div class="field-group">
+  <label for="teacherName">Teacher Name</label>
+  <select id="teacherName">
+    <option value="">-- Select Teacher --</option>
+  </select>
+</div>
+            <div class="field-group">
+              <label for="teacherPassword">Password</label>
+              <input id="teacherPassword" type="password" />
+            </div>
+            <div class="field-group">
+              <button id="teacherLoginBtn" class="primary-btn">Sign in as Teacher</button>
+            </div>
+            <div id="teacherError" class="message-banner hidden"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>
