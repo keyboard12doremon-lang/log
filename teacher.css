@@ -17,6 +17,8 @@ body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #eef4ff 0%, #f7fbff 100%);
   color: var(--text);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 button,
@@ -540,6 +542,65 @@ tbody tr + tr {
   }
 }
 
+@media (max-width: 600px) {
+  .page-shell {
+    padding: 12px;
+  }
+
+  .page-header {
+    padding: 16px;
+  }
+
+  .brand-block {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .logo-badge {
+    width: 46px;
+    height: 46px;
+    font-size: 1.1rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.68rem;
+  }
+
+  .header-title h2 {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .diary-actions {
+    flex-direction: column;
+  }
+
+  .diary-actions button {
+    width: 100%;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions > * {
+    width: 100%;
+  }
+}
+
 @media (max-width: 760px) {
   .content-area {
     gap: 18px;
@@ -575,7 +636,8 @@ tbody tr + tr {
   td {
     border: none;
     position: relative;
-    padding-left: 48%;
+    padding-left: 46%;
+    padding-right: 12px;
     text-align: left;
   }
 
