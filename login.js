@@ -8,17 +8,17 @@ const teacherPasswords = {
   "Girish Sir": "7070767911",
   "Amarjeet Sir": "7562968711",
   "Aayush Sir": "9229726349",
-  "Aisha Ma'am": "7562968711",
-  "Suman Sir": "7562968711",
-  "Sarita Ma'am": "7562968711",
-  "Raj Laxmi Ma'am": "7562968711",
-  "Nikki Ma'am": "7562968711",
-  "Sunita Ma'am": "7562968711",
-  "Priyanka Ma'am": "7562968711",
-  "Kanchan Ma'am": "7562968711",
-  "Khushboo Ma'am": "7562968711",
-  "Sneha Ma'am": "7562968711",
-  "Vaishnavi Ma'am": "7562968711"
+  "Aisha Ma'am": "7970693750",
+  "Suman Sir": "9576346440",
+  "Sarita Ma'am": "7079139446",
+  "Raj Laxmi Ma'am": "7644069411",
+  "Nikki Ma'am": "9798528164",
+  "Sunita Ma'am": "8789446744",
+  "Priyanka Ma'am": "8051642628",
+  "Kanchan Ma'am": "9693566488",
+  "Khushboo Ma'am": "8986456190",
+  "Sneha Ma'am": "8709960943",
+  "Vaishnavi Ma'am": "7209102963"
 };
 const adminPassword = 'admin123';
 
