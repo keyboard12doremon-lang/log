@@ -1054,7 +1054,7 @@ td em {
   }
 
   .row-actions button,
-
+}
 
   /* ===========================
    RESPONSIVE MOBILE
@@ -1238,4 +1238,43 @@ td em {
   .saved-badge {
     width: 100%;
   }
+}
+
+@media (max-width:768px){
+
+.preview-table{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+.preview-table table{
+    display:table !important;
+    width:100%;
+    min-width:700px;
+}
+
+.preview-table thead{
+    display:table-header-group !important;
+}
+
+.preview-table tbody{
+    display:table-row-group !important;
+}
+
+.preview-table tr{
+    display:table-row !important;
+}
+
+.preview-table th,
+.preview-table td{
+    display:table-cell !important;
+    position:static !important;
+    padding:12px;
+    border:1px solid var(--border);
+}
+
+.preview-table td::before{
+    display:none !important;
+}
+
 }
